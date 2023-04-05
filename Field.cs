@@ -16,7 +16,7 @@ namespace snake
             this.FieldHeight = height;
         }
 
-        public void Draw()
+        public void DrawCreative()
         {
             Console.Clear(); // clear the console before drawing
 
@@ -56,6 +56,36 @@ namespace snake
                 {
                     Console.Write("█");
                 }
+            }
+            Console.WriteLine();
+        }
+
+        public void Draw()
+        {
+            Console.Clear(); // clear the console before drawing
+
+            // draw the top border
+            for (int i = 0; i < FieldWidth + 2; i++)
+            {
+                Console.Write("█");
+            }
+            Console.WriteLine();
+
+            // draw the sides
+            for (int i = 0; i < FieldHeight; i++)
+            {
+                Console.Write("█");
+                for (int j = 0; j < FieldWidth; j++)
+                {
+                    Console.Write(" ");
+                }
+                Console.WriteLine("█");
+            }
+
+            // draw the bottom border
+            for (int i = 0; i < FieldWidth + 2; i++)
+            {
+                Console.Write("█");
             }
             Console.WriteLine();
         }

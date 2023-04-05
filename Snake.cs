@@ -5,6 +5,8 @@ namespace snake
 {
     public class Snake
     {
+        Program program = new Program();
+
         private List<Point> body;
         private int length;
         private char direction;
@@ -82,6 +84,10 @@ namespace snake
                     {
                         // Reset game objects and start again
                         body.Clear();
+                        length = 3;
+                        {
+                            
+                        }
                         for (int j = 0; j < length; j++)
                         {
                             body.Add(new Point(20 + j, 10));
