@@ -8,7 +8,7 @@ namespace snake
         {
             // Initialize game objects
             Field field = new Field(40, 20);
-            Snake snake = new Snake(20, 10, 9, 'l');
+            Snake snake = new Snake(20, 10, 3, 'l');
             Food food = new Food(field.FieldWidth, field.FieldHeight);
             int score = 0;
             
@@ -73,6 +73,19 @@ namespace snake
                     food = new Food(field.FieldWidth, field.FieldHeight);
                 }
 
+                // Check for collisions with the empty space barrier
+                if (snake.Body[0].y == 0 && snake.Body[0].x == field.FieldWidth / 2 + 1)
+                {
+                    // Move the snake to the bottom border
+                    snake.Body[0].y = field.FieldHeight;
+                }
+                else if (snake.Body[0].y == field.FieldHeight + 1 && snake.Body[0].x == field.FieldWidth / 2 + 1)
+                {
+                    // Move the snake to the top border
+                    snake.Body[0].y = 1;
+                }
+
+
                 // Check for collisions with field edges
                 if (snake.Body[0].x == 0 || snake.Body[0].x == field.FieldWidth + 1 ||
                     snake.Body[0].y == 0 || snake.Body[0].y == field.FieldHeight + 1)
@@ -92,7 +105,7 @@ namespace snake
                     else
                     {
                         // Exit the game
-                        return;
+                        return; 
                     }
                 }
                 // Wait for a short time to control the game speed

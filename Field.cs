@@ -23,7 +23,14 @@ namespace snake
             // draw the top border
             for (int i = 0; i < FieldWidth + 2; i++)
             {
-                Console.Write("█");
+                if (i == FieldWidth / 2 + 1) // check if in the middle
+                {
+                    Console.Write(" ");
+                }
+                else
+                {
+                    Console.Write("█");
+                }
             }
             Console.WriteLine();
 
@@ -41,7 +48,14 @@ namespace snake
             // draw the bottom border
             for (int i = 0; i < FieldWidth + 2; i++)
             {
-                Console.Write("█");
+                if (i == FieldWidth / 2 + 1) // check if in the middle
+                {
+                    Console.Write(" ");
+                }
+                else
+                {
+                    Console.Write("█");
+                }
             }
             Console.WriteLine();
         }
